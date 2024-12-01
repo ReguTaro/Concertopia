@@ -608,23 +608,37 @@ button:hover {
 }
 
 /* Responsive design for smaller screens */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
     .team-container {
-        grid-template-columns: repeat(2, 1fr); /* 2 profiles per row for tablets */
+        grid-template-columns: repeat(2, 1fr); 
+        padding: 30px 10px;  
+        justify-items: center;                   
     }
     .profile {
-        width: 180px;                          /* Slightly smaller size */
-        height: 180px;
+        max-width: 200px;                     
+    }
+}
+
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+    .team-container {
+        grid-template-columns: repeat(2, 1fr); 
+        grid-gap: 20px; 
+        justify-items: center;                       
+    }
+    .profile {
+        max-width: 180px;                   
     }
 }
 
 @media (max-width: 480px) {
     .team-container {
-        grid-template-columns: 1fr;            /* 1 profile per row on mobile */
+        grid-template-columns: 1fr;            
+        padding: 20px 5px;  
+        justify-items: center;          
     }
     .profile {
-        width: 160px;                          /* Smaller size for mobile */
-        height: 160px;
+        max-width: 160px;                      
     }
 }
 
