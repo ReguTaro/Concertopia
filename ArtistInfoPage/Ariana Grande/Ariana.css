@@ -134,8 +134,6 @@ main-container {
   object-fit: cover; /* Ensure the image covers the container without distortion */
   border-radius: 20px;
 }
- 
-has context menu
 
 /* Navigation Dots */
 .dots {
