@@ -96,7 +96,7 @@ text-shadow: 1px 1px 2px black;
 
 
 /* Main Section */
-main-container {
+.main-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
