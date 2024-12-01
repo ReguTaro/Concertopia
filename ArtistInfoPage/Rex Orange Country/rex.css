@@ -1,0 +1,713 @@
+ /* General Reset */
+ * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  body {
+    font-family: "Arial", sans-serif;
+    background: linear-gradient(to left, #bebbbb, #e6e6e6);
+    color: #333;
+    padding-top: 10px;
+    
+  }
+
+  /* Navbar */
+/* Navbar Styles */
+.navbar {
+  display: flex; /* Flexbox for aligning navbar content */
+  position: fixed; /* Fixes navbar at the top of the page */
+  top: 0; /* Aligns navbar to the top */
+  width: 100%; /* Makes the navbar span the full width of the page */
+  background: linear-gradient(to left, #4a4a4a, #9e9e9e); /* Adjust gradient colors */
+  padding: 10px 20px; /* Adds padding inside the navbar */
+  z-index: 1000; /* Ensures the navbar stays on top of other content */
+  justify-content: space-between; /* Distributes navbar items evenly */
+  align-items: center; /* Centers the navbar items vertically */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Adds a subtle shadow beneath the navbar */
+}
+
+/* Left Section: Logo and Title */
+.navbar-left {
+  display: flex; /* Flexbox for aligning logo and title */
+  align-items: center; /* Vertically aligns the items */
+}
+
+.navbar-logo {
+  width: 50px; /* Sets a fixed width for the logo */
+  height: 50px; /* Sets a fixed height for the logo */
+  margin-right: 10px; /* Adds space between the logo and title */
+  border-radius: 50%; /* Makes the logo circular */
+}
+
+.navbar-title {
+  color: white; /* Sets the title color to white */
+  font-size: 24px; /* Sets font size for the title */
+  font-weight: bold; /* Makes the title text bold */
+  letter-spacing: 2px; /* Adds spacing between letters */
+  text-shadow: 1px 1px 2px black; /* Adds a subtle shadow behind the text */
+}
+
+/* Container for the back button */
+.back-button-container {
+    position: absolute;
+    top: 80px; /* Position below the navbar */
+    left: 20px; /* Adjust spacing from the left */
+}
+
+/* Styling the circular button */
+#back-btn {
+    background-color: #fff; /* White background */
+    border: 2px solid #333; /* Border around the circle */
+    border-radius: 50%; /* Circular shape */
+    cursor: pointer;
+    width: 50px; /* Circle width */
+    height: 50px; /* Circle height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3); /* 3D shadow effect */
+    transition: background-color 0.3s, border-color 0.3s; /* Smooth hover effect */
+}
+
+/* Styling the symbol inside the circle */
+.back-symbol {
+    font-size: 25px; /* Size of the '<' symbol */
+    color: #000000; /* Dark color for the symbol */
+    transition: color 0.3s; /* Smooth transition for color */
+}
+
+/* Hover effect for the circle */
+#back-btn:hover {
+    background-color: #f0f0f0; /* Light grey background on hover */
+    border-color: #ff0000; /* Change border color on hover */
+}
+
+/* Hover effect for the symbol */
+#back-btn:hover .back-symbol {
+    color: #ff0000; /* Change symbol color on hover */
+}
+
+/* Focus effect */
+#back-btn:focus {
+    outline: none; /* Remove default outline */
+    box-shadow: 0 0 0 3px rgba(0, 0, 0.5, 1.5); /* Blue focus ring */
+}
+
+
+  /* Main Section */
+  .main-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    padding: 68px 20px 20px; /* Space for navbar */
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
+  }
+
+  /* Image Slider Container */
+  .slider-container {
+    position: relative;
+    width: 400px;
+    height: 400px;
+    overflow: hidden;
+    border-radius: 20px;
+    border: 1px solid #000000;
+    box-shadow: 0 4px 8px rgba(0, 0.5, 0.5, 1.2);
+  }
+
+  .slider-images {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+  }
+
+  .slider-images img {
+    width: 400px;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+  }
+
+  /* Navigation Dots */
+  .dots {
+    position: absolute;
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+  }
+
+  .dot {
+    width: 15px;
+    height: 15px;
+    background-color: #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+
+  .dot.active {
+    background-color: #333;
+  }
+
+  /* Text Content */
+  .text-container {
+    flex: 1;
+    padding-left: 20px;
+  }
+
+  .text-container h1 {
+    font-size: 80px;
+    font-family: "Georgia", serif;
+    color: goldenrod;
+    margin-bottom: 10px;
+  }
+
+  .text-container h2 {
+    font-size: 40px;
+    color: #333;
+    margin-bottom: 20px;
+  }
+
+  .text-container p {
+    font-size: 25px;
+    line-height: 1.5;
+    color: #070707;
+  }
+
+ /* Text Content */
+.text-container {
+    flex: 1;
+    padding-left: 20px;
+    
+  }
+  
+  .text-container h1 {
+    font-size: 80px; /* Large font size for main header */
+    font-family: "Georgia", serif;
+    color: rgb(255, 166, 0);
+    margin-bottom: 10px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .text-container h2 {
+    font-size: 50px; /* Increased size for subtitle */
+    color: #333;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+  }
+  
+  .text-container p {
+    font-size: 25px; /* Increased paragraph font size */
+    line-height: 1.8; /* Slightly larger line height for better readability */
+    color: #070707;
+  }
+  
+  /* Tour Dates */
+.tour-dates {
+    margin-left: 20px; /* Adds a gap from the left edge */
+    margin-right: 20px; /* Adds a gap from the right edge */
+    margin-top: 40px;
+    font-family: "Arial", sans-serif;
+    color: white; /* White text for tour dates */
+    text-shadow: 2px 2px 5px black; /* Black shadow for readability */
+  }
+  
+  /* Country */
+  .tour-dates .country {
+    font-weight: bold;
+    font-size: 30px; /* Increased font size for country */
+    margin-bottom: 10px;
+    text-shadow: 3px 3px 6px black; /* Slightly stronger shadow for better clarity */
+  }
+  
+  /* Location and Date */
+  .tour-dates .location-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px; /* More spacing between entries */
+    font-weight: bold;
+  }
+  
+  /* Clickable Location */
+  .tour-dates .location-date .location {
+    font-size: 22px; /* Increased font size for location */
+    font-weight: bold;
+    cursor: pointer;
+    text-shadow: 2px 2px 4px black; /* Ensure readability with shadow */
+    transition: transform 0.3s ease-in-out; /* Smooth zoom-in transition */
+  }
+  
+  .tour-dates .location-date .location a {
+    text-decoration: none; /* Remove underline for links */
+    color: inherit; /* Inherit text color */
+  }
+  
+  .tour-dates .location-date .location:hover {
+    background: radial-gradient(circle, rgba(87, 87, 87, 0.8), rgba(109, 109, 108, 0.6)); /* Circle gradient */
+    color: #fff; /* Change text color */
+    text-shadow: 3px 3px 6px black; /* Enhance shadow on hover */
+    border-radius: 50%; /* Makes the background circular */
+    padding: 10px 20px; /* Expand padding for better visual effect */
+  }
+  
+  /* Date */
+  .tour-dates .location-date .date {
+    font-size: 25px; /* Larger font size for the date */
+    font-weight: bold;
+    color: white; /* Keep date text white */
+    text-shadow: 3px 3px 6px black; /* Add strong shadow for readability */
+  }
+  
+  
+  /* Footer Styles */
+  footer {
+    background: linear-gradient(to right, #4a4a4a, #9e9e9e); /* Adjust gradient colors */
+    color: rgb(255, 253, 253);
+    padding: 10px 20px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+
+.footer-left {
+    flex: 1;
+    min-width: 200px;
+}
+
+.footer-left p {
+    margin: 0;
+}
+
+.footer-right {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    flex: 1;
+    min-width: 150px;
+}
+
+.footer-right a {
+    color: black;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.footer-right a:hover {
+    background-color: #cccccc; /* Hover effect */
+}
+/* Media Queries */
+@media (max-width: 1200px) {
+    .navbar-title {
+      font-size: 20px;
+    }
+  
+    .main-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  
+    .slider-container {
+      width: 300px;
+      height: 300px;
+    }
+  
+    .text-container h1 {
+      font-size: 60px;
+    }
+  
+    .text-container h2 {
+      font-size: 30px;
+    }
+  
+    .text-container p {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .navbar-title {
+      font-size: 18px;
+    }
+  
+    .slider-container {
+      width: 80%;
+      height: 250px;
+    }
+  
+    .main-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding: 60px 10px 10px;
+    }
+  
+    .text-container h1 {
+      font-size: 50px;
+    }
+  
+    .text-container h2 {
+      font-size: 25px;
+    }
+  
+    .text-container p {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navbar-logo {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .slider-container {
+      width: 90%;
+      height: 200px;
+    }
+  
+    .main-container {
+      flex-direction: column;
+      padding: 60px 10px 10px;
+    }
+  
+    .text-container h1 {
+      font-size: 40px;
+    }
+  
+    .text-container h2 {
+      font-size: 22px;
+    }
+  
+    .text-container p {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .navbar {
+      padding: 10px;
+    }
+  
+    .slider-container {
+      width: 100%;
+      height: 200px;
+    }
+  
+    .text-container h1 {
+      font-size: 30px;
+    }
+  
+    .text-container h2 {
+      font-size: 18px;
+    }
+  
+    .text-container p {
+      font-size: 12px;
+    }
+  
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-left,
+    .footer-right {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .footer-right a {
+      padding: 8px;
+      width: 35px;
+      height: 35px;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .navbar-title {
+      font-size: 16px;
+    }
+  
+    .slider-container {
+      width: 100%;
+      height: 180px;
+    }
+  
+    .text-container h1 {
+      font-size: 26px;
+    }
+  
+    .text-container h2 {
+      font-size: 16px;
+    }
+  
+    .text-container p {
+      font-size: 10px;
+    }
+  
+    .footer-left,
+    .footer-right {
+      width: 100%;
+      text-align: center;
+    }
+  }/* Media Queries */
+@media (max-width: 1200px) {
+    .navbar-title {
+      font-size: 20px;
+    }
+  
+    .main-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 40px;
+    }
+  
+    .slider-container {
+      width: 300px;
+      height: 300px;
+    }
+  
+    .text-container h1 {
+      font-size: 60px;
+    }
+  
+    .text-container h2 {
+      font-size: 30px;
+    }
+  
+    .text-container p {
+      font-size: 18px;
+    }
+  
+    .tour-dates .country {
+      font-size: 25px;
+    }
+  
+    .tour-dates .location-date .location {
+      font-size: 18px;
+    }
+  
+    .tour-dates .location-date .date {
+      font-size: 20px;
+    }
+  }
+  
+  @media (max-width: 900px) {
+    .navbar-title {
+      font-size: 18px;
+    }
+  
+    .slider-container {
+      width: 250px;
+      height: 250px;
+    }
+  
+    .main-container {
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      padding: 60px 10px 10px;
+    }
+  
+    .text-container h1 {
+      font-size: 50px;
+    }
+  
+    .text-container h2 {
+      font-size: 25px;
+    }
+  
+    .text-container p {
+      font-size: 16px;
+    }
+  
+    .tour-dates .country {
+      font-size: 22px;
+    }
+  
+    .tour-dates .location-date .location {
+      font-size: 16px;
+    }
+  
+    .tour-dates .location-date .date {
+      font-size: 18px;
+    }
+  }
+  
+  @media (max-width: 700px) {
+    .navbar {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .navbar-logo {
+      width: 40px;
+      height: 40px;
+    }
+  
+    .slider-container {
+      width: 200px;
+      height: 200px;
+    }
+  
+    .main-container {
+      flex-direction: column;
+      padding: 60px 10px 10px;
+    }
+  
+    .text-container h1 {
+      font-size: 40px;
+    }
+  
+    .text-container h2 {
+      font-size: 22px;
+    }
+  
+    .text-container p {
+      font-size: 14px;
+    }
+  
+    .tour-dates .country {
+      font-size: 20px;
+    }
+  
+    .tour-dates .location-date .location {
+      font-size: 14px;
+    }
+  
+    .tour-dates .location-date .date {
+      font-size: 16px;
+    }
+  }
+  
+  @media (max-width: 500px) {
+    .navbar {
+      padding: 10px;
+    }
+  
+    .slider-container {
+      width: 200px;
+      height: 200px;
+    }
+  
+    .text-container h1 {
+      font-size: 30px;
+    }
+  
+    .text-container h2 {
+      font-size: 18px;
+    }
+  
+    .text-container p {
+      font-size: 12px;
+    }
+  
+    .footer-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .footer-left,
+    .footer-right {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .footer-right a {
+      padding: 8px;
+      width: 35px;
+      height: 35px;
+    }
+  
+    .tour-dates .country {
+      font-size: 18px;
+      text-align: center;
+    }
+  
+    .tour-dates .location-date {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .tour-dates .location-date .location {
+      font-size: 14px;
+      margin-bottom: 5px;
+    }
+  
+    .tour-dates .location-date .date {
+      font-size: 14px;
+    }
+  }
+  
+  @media (max-width: 375px) {
+    .navbar-title {
+      font-size: 16px;
+    }
+  
+    .slider-container {
+      width: 180px;
+      height: 180px;
+    }
+  
+    .text-container h1 {
+      font-size: 26px;
+    }
+  
+    .text-container h2 {
+      font-size: 16px;
+    }
+  
+    .text-container p {
+      font-size: 10px;
+    }
+  
+    .footer-left,
+    .footer-right {
+      width: 100%;
+      text-align: center;
+    }
+  
+    .tour-dates .country {
+      font-size: 16px;
+      text-align: center;
+    }
+  
+    .tour-dates .location-date {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .tour-dates .location-date .location {
+      font-size: 12px;
+      margin-bottom: 5px;
+    }
+  
+    .tour-dates .location-date .date {
+      font-size: 12px;
+    }
+  }
+  

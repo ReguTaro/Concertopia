@@ -1,0 +1,317 @@
+/* General Reset */
+* {
+    margin: 0; /* Removes default margin from all elements */
+    padding: 0; /* Removes default padding from all elements */
+    box-sizing: border-box; /* Includes padding and border in element's total width and height */
+}
+ 
+/* Body Styles */
+body {
+    font-family: Arial, sans-serif; /* Sets font for the body text */
+    background: linear-gradient(to right, #c5c5c5, #e6e6e6); /* Adjust gradient colors */
+    padding-top: 70px; /* Adds top padding to prevent navbar from overlapping content */
+}
+ 
+/* General Navbar Styles */
+.navbar {
+    display: flex;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: linear-gradient(to right, #4a4a4a, #9e9e9e); /* Adjust gradient colors */
+    color: white;
+    padding: 10px 20px;
+    z-index: 1000;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+ 
+.navbar-left {
+    display: flex;
+    align-items: center;
+}
+ 
+.navbar-logo {
+    width: 55px;
+    height: 50px;
+    margin-right: 10px;
+    border-radius: 50%;
+}
+ 
+.navbar-title {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 2px black;
+}
+ 
+/* Hamburger Menu */
+.hamburger {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    z-index: 1001;
+    position: relative;
+    width: 30px; /* Adjust width */
+    height: 40px; /* Adjust height to fit the lines */
+}
+ 
+/* Hamburger Lines */
+.hamburger span {
+    background-color: white;
+    height: 3px; /* Thickness of lines */
+    width: 100%; /* Full width */
+    margin: 3px 0; /* Spacing between lines */
+    border-radius: 2px; /* Slightly round edges */
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+ 
+/* Active State for "X" */
+/* Top Line */
+.hamburger.active span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg); /* Top line rotates to form part of "X" */
+}
+ 
+/* Middle Line */
+.hamburger.active span:nth-child(2) {
+    opacity: 0; /* Hide the middle line */
+}
+ 
+/* Bottom Line */
+.hamburger.active span:nth-child(3) {
+    transform: translateY(-9px) rotate(-45deg); /* Bottom line rotates to form the other part of "X" */
+}
+ 
+/* Navigation Links (Hidden Dropdown by Default) */
+.navbar-right {
+    display: flex; /* Keep flex layout for links */
+    flex-direction: column; /* Stack links vertically */
+    list-style: none; /* Remove bullet points */
+    background-color: #4f4f4f; /* Dark gray background */
+    position: absolute; /* Position dropdown below navbar */
+    top: 70px;
+    right: 20px; /* Align dropdown to the right */
+    padding: 0; /* No padding initially */
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    width: 200px; /* Fixed width for dropdown */
+    overflow: hidden; /* Hide overflowing content during transition */
+    max-height: 0; /* Initially collapsed */
+    opacity: 0; /* Fully transparent initially */
+    transform-origin: top; /* Animates from the top */
+    transition: max-height 0.5s ease, opacity 0.3s ease; /* Smooth fold effect */
+    z-index: 1000; /* Ensure it appears above other elements */
+}
+ 
+/* Active State (Dropdown Visible) */
+.navbar-right.active {
+    max-height: 450px; /* Adjust to fit your content (set a sufficient height) */
+    opacity: 1; /* Fully visible */
+    padding: 10px; /* Add padding when active */
+}
+ 
+/* List Items */
+.navbar-right li {
+    margin: 10px 0; /* Add spacing between links */
+}
+ 
+/* Links Style */
+.navbar-right a {
+    color: white; /* Text color */
+    text-decoration: none; /* Remove underline */
+    font-size: 18px; /* Set font size */
+    padding: 10px 15px; /* Padding for clickable area */
+    border-radius: 5px; /* Rounded edges for links */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out, transform 0.3s ease-in-out; /* Smooth hover effect */
+}
+ 
+/* Hover Effect for Links */
+.navbar-right a:hover {
+    background-color: #3a3a3a; /* Slightly darker background on hover */
+    color: #f0a500; /* Optional highlight color for text */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Subtle shadow effect */
+}
+
+/* Styling for the team container */
+.team-container {
+    display: grid;                             /* Use grid layout */
+    grid-template-columns: repeat(3, 1fr);     /* 3 equal-width columns */
+    grid-gap: 20px;                            /* Adds space between the grid items */
+    margin: 20px auto;                         /* Centers the container */
+    max-width: 1200px;                         /* Optional: Limit the max width for better control */
+  }
+  
+  /* Styling for each profile */
+  .profile {
+    display: flex;                             /* Use flexbox for horizontal layout */
+    align-items: center;                       /* Vertically center the content */
+    text-align: left;                          /* Align text to the left */
+    gap: 20px;                                 /* Adds space between image and text */
+    padding: 10px;
+    border: 1px solid #ddd;                    /* Optional: Add border around each profile */
+    border-radius: 10px;                       /* Optional: Round the corners of the profile card */
+    margin-top: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 2, 0.2);
+  }
+
+  .profile:hover {
+    color: #138639;  /* Color of the profile container when hovered */
+    background: #7e7d7d; /* Optional: background change for profile on hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow effect on hover */
+    transition: all 0.3s ease-in-out;  /* Smooth transition for hover effect */
+    transform: scale(1.05);  /* Slightly scale up the profile */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect on hover */
+  }
+  
+  /* Profile image */
+  .profile-img img {
+    width: 100px;                              /* Set fixed width for the image */
+    height: 100px;                             /* Set fixed height for the image */
+    object-fit: cover;                         /* Ensures the image covers the area */
+    border-radius: 50%;                        /* Make the image circular */
+  }
+  
+  /* Styling for the profile details */
+  .profile-details {
+    flex-grow: 1;                              /* Allows the details to take up remaining space */
+  }
+  
+  /* Optional: Styling for the profile names and emails */
+  .profile-details h3, .profile-details p {
+    margin: 0;
+    font-size: 16px;
+  }
+  
+  /* Optional: Add hover effect to links */
+  .profile-details a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .profile-details a:hover {
+    color: #007BFF;  /* Change color on hover */;
+  }
+  
+  /* Optional: Styling for profile emails */
+  .profile-details i {
+    margin-right: 5px;
+    font-size: auto;
+  }
+  
+  /* Responsive design for smaller screens */
+  @media (max-width: 768px) {
+    .team-container {
+      grid-template-columns: repeat(2, 1fr);  /* 2 profiles per row for medium screens */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .team-container {
+      grid-template-columns: 1fr;              /* 1 profile per row on mobile */
+      font-size: small;
+  }
+}
+  
+
+
+  
+  
+  
+  
+  
+  
+  
+.contact_us{
+    text-align:center;
+}
+
+.contact_us a {
+    text-decoration: none; /* Removes the underline */
+    color: inherit;        /* Optional: keeps the default text color */
+}
+
+.contact_us a:hover {
+    color: #007BFF;  /* Change color on hover */
+}
+
+.contact_us a {
+    text-decoration: none;
+    color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+  /* Footer Styles */
+  footer {
+    background: linear-gradient(to right, #4a4a4a, #9e9e9e); /* Adjust gradient colors */
+    color: white;
+    padding: 10px 20px;
+}
+ 
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap; /* Ensures responsiveness */
+}
+ 
+.footer-left {
+    flex: 1;
+    min-width: 200px;
+}
+ 
+.footer-left p {
+    margin: 0;
+}
+ 
+.footer-right {
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+    flex: 1;
+    min-width: 150px;
+}
+ 
+.footer-right a {
+    color: black;
+    background-color: white;
+    padding: 10px;
+    border-radius: 50%;
+    text-decoration: none;
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+ 
+.footer-right a:hover {
+    background-color: #cccccc; /* Hover effect */
+}
+ 
+/* Responsive Design */
+@media (max-width: 600px) {
+    .footer-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    }
+ 
+    .footer-right {
+    justify-content: center;
+    margin-top: 10px;
+    }
+}
